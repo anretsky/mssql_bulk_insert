@@ -8,4 +8,7 @@ This function writes data from a pandas dataframe to a temporary csv file. The t
 df.to_sql('OptionRawIV', engine, if_exists='append', index=False, method=mssql_bulk_insert), number=1)
 ~~~
 
-
+#### Performance
+For a chunksize of 300000 rows:
+  without callable function: ~6 min/chunk
+  with callable function: ~9 sec/chunk
