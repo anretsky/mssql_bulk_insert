@@ -10,5 +10,5 @@ df.to_sql('OptionRawIV', engine, if_exists='append', index=False, method=mssql_b
 
 #### Performance
 For a chunksize of 300000 rows:
-  without callable function: ~6 min/chunk
-  with callable function: ~9 sec/chunk
+  * without callable function: ~6 min/chunk
+  * with callable function: ~9 sec/chunk
