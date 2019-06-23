@@ -12,6 +12,10 @@ df.to_sql('OptionRawIV', engine, if_exists='append', index=False, method=mssql_b
 For a chunksize of 300000 rows with 20 columns of mostly floating numbers:
   * without callable function: ~6 min/chunk
   * with callable function: ~9 sec/chunk
+  
+#### Note for MSSQL Server running on macOS in Docker container
+
+The temporary csv file location must be shared with container and must be copied to a non-shared file within the container for the bulk insert to work.
 
 #### Reference
 Adapted from pandas sample insertion [method](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html#io-sql-method)
